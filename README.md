@@ -4,6 +4,10 @@
 
 # GlassWidgets
 
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Avalonia](https://img.shields.io/badge/Avalonia-8B44AC?style=flat-square&logo=avalonia&logoColor=white)
+
 基于 [Avalonia 11](https://avaloniaui.net/) 的 Windows 桌面**玻璃质感小组件**。单块 AcrylicBlur 半透明面板、macOS 风格交通灯、可拖拽摆放、布局自动持久化。
 
 > 仅支持 Windows 10/11（依赖 DWM 圆角与 `AcrylicBlur` 透明级别）。
