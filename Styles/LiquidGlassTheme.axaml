@@ -1,0 +1,127 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- 颜色令牌：去色，纯黑白（规范 §7） -->
+  <Styles.Resources>
+    <Color x:Key="GlassText">#FFFFFFFF</Color>
+    <SolidColorBrush x:Key="GlassForeground" Color="{StaticResource GlassText}" />
+    <SolidColorBrush x:Key="HairlineBrush" Color="#20FFFFFF" />
+  </Styles.Resources>
+
+  <!-- 文字分级：FontWeight + LetterSpacing + Opacity，不靠颜色（规范 §6） -->
+  <Style Selector="TextBlock.title">
+    <Setter Property="FontSize" Value="20" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="LetterSpacing" Value="-0.3" />
+    <Setter Property="Foreground" Value="{StaticResource GlassForeground}" />
+  </Style>
+  <Style Selector="TextBlock.big">
+    <Setter Property="FontSize" Value="44" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="LetterSpacing" Value="-1.2" />
+    <Setter Property="LineHeight" Value="44" />
+    <Setter Property="Foreground" Value="{StaticResource GlassForeground}" />
+  </Style>
+  <Style Selector="TextBlock.sub">
+    <Setter Property="FontSize" Value="12" />
+    <Setter Property="Opacity" Value="0.6" />
+    <Setter Property="LetterSpacing" Value="0" />
+    <Setter Property="Foreground" Value="{StaticResource GlassForeground}" />
+  </Style>
+  <Style Selector="TextBlock.cap">
+    <Setter Property="FontSize" Value="11" />
+    <Setter Property="Opacity" Value="0.55" />
+    <Setter Property="LetterSpacing" Value="0.4" />
+    <Setter Property="Foreground" Value="{StaticResource GlassForeground}" />
+  </Style>
+
+  <!-- 极简图标按钮（icon-only，无文字；按压即时回弹，规范 §8.3） -->
+  <Style Selector="Button.icon">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Foreground" Value="{StaticResource GlassForeground}" />
+    <Setter Property="Width" Value="34" />
+    <Setter Property="Height" Value="34" />
+    <Setter Property="CornerRadius" Value="10" />
+    <Setter Property="RenderTransform" Value="scale(1)" />
+  </Style>
+  <Style Selector="Button.icon:pointerover">
+    <Setter Property="Background" Value="#1AFFFFFF" />
+  </Style>
+  <Style Selector="Button.icon:pointerover:pressed">
+    <Setter Property="RenderTransform" Value="scale(0.92)" />
+  </Style>
+
+  <!-- 苹果风交通灯（关闭/最小化），还原 macOS：12px、1px 深色描边、hover 显半透黑符号 -->
+  <Style Selector="Button.mac">
+    <Setter Property="Width" Value="12" />
+    <Setter Property="Height" Value="12" />
+    <Setter Property="CornerRadius" Value="6" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Cursor" Value="Hand" />
+  </Style>
+  <Style Selector="Button.mac.close">
+    <Setter Property="Background" Value="#FF5F57" />
+    <Setter Property="BorderBrush" Value="#E0443E" />
+  </Style>
+  <Style Selector="Button.mac.min">
+    <Setter Property="Background" Value="#FEBC2E" />
+    <Setter Property="BorderBrush" Value="#D8A023" />
+  </Style>
+  <Style Selector="Button.mac.close:pointerover, Button.mac.close:pressed">
+    <Setter Property="Background" Value="#FF5F57" />
+  </Style>
+  <Style Selector="Button.mac.min:pointerover, Button.mac.min:pressed">
+    <Setter Property="Background" Value="#FEBC2E" />
+  </Style>
+
+  <!-- 中心卡片：普通按钮承载图标+名称（非玻璃块，规范 §1 单板不堆玻璃） -->
+  <Style Selector="Button.card">
+    <Setter Property="Background" Value="#14FFFFFF" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="#26FFFFFF" />
+    <Setter Property="CornerRadius" Value="12" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="RenderTransform" Value="scale(1)" />
+  </Style>
+  <Style Selector="Button.card:pointerover">
+    <Setter Property="Background" Value="#1F1F23" />
+    <Setter Property="BorderBrush" Value="#40FFFFFF" />
+  </Style>
+  <Style Selector="Button.card:pointerover:pressed">
+    <Setter Property="RenderTransform" Value="scale(0.96)" />
+  </Style>
+
+  <!-- 线性图标：stroke 1.5–2px、圆角端点、单色纯白（规范 §9） -->
+  <Style Selector="Path.glyph">
+    <Setter Property="Stroke" Value="{StaticResource GlassForeground}" />
+    <Setter Property="StrokeThickness" Value="1.8" />
+    <Setter Property="StrokeLineCap" Value="Round" />
+    <Setter Property="Stretch" Value="Uniform" />
+    <Setter Property="Width" Value="18" />
+    <Setter Property="Height" Value="18" />
+  </Style>
+  <Style Selector="Path.icon">
+    <Setter Property="Stroke" Value="{StaticResource GlassForeground}" />
+    <Setter Property="StrokeThickness" Value="1.8" />
+    <Setter Property="StrokeLineCap" Value="Round" />
+    <Setter Property="Stretch" Value="Uniform" />
+  </Style>
+  <!-- 苹果灯内 glyph：默认透明，hover 显形。macOS 符号为 ~55% 半透黑细线。显式 Center 对齐，确保符号在按钮正中 -->
+  <Style Selector="Button.mac Path">
+    <Setter Property="Stroke" Value="#8C000000" />
+    <Setter Property="StrokeThickness" Value="1.4" />
+    <Setter Property="StrokeLineCap" Value="Round" />
+    <Setter Property="Stretch" Value="Uniform" />
+    <Setter Property="Width" Value="8" />
+    <Setter Property="Height" Value="8" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Opacity" Value="0" />
+  </Style>
+  <Style Selector="Button.mac:pointerover Path">
+    <Setter Property="Opacity" Value="1" />
+  </Style>
+</Styles>

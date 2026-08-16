@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GlassWidgets.Controls"
+        x:Class="GlassWidgets.Widgets.WidgetWindow"
+        TransparencyLevelHint="AcrylicBlur"
+        SystemDecorations="None"
+        Background="Transparent" Foreground="#FFFFFFFF"
+        ShowInTaskbar="False"
+        WindowStartupLocation="Manual" CanResize="False">
+  <Grid x:Name="Root" Background="Transparent">
+    <local:GlassSurface x:Name="Board" CornerRadius="16" TintOpacity="0.30" TintColor="#56565F" GlossStrength="1.2" />
+    <Grid Margin="14">
+      <ContentControl x:Name="Host" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+      <Button x:Name="CloseBtn" Classes="mac close"
+              HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Path Data="{StaticResource GeoGlyphClose}" />
+      </Button>
+    </Grid>
+  </Grid>
+</Window>

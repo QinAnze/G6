@@ -1,0 +1,71 @@
+# === Build results (GitHub VisualStudio / .NET gitignore) ===
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# === IDE / editor caches ===
+.vs/
+.idea/
+*.user
+*.userprefs
+*.suo
+*.[Cc]ache
+*.rsync
+_ReSharper*/
+*.DotSettings
+*.DotSettings.user
+
+# === .NET tooling ===
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.[Pp]ublish/
+*.nupkg
+*.snupkg
+.nuget/
+NuGet.exe
+NuGet.config
+nuget.config
+.msbuild/
+*.nlog
+
+# === Avalonia / generated ===
+*.generated.cs
+
+# === Tests / coverage ===
+[Tt]est[Rr]esult*/
+*.trx
+.coverage
+.coveragexml
+[Oo]verage*/
+
+# === OS / junk ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# === Runtime state (NOT source) ===
+# Widget layout is persisted to %LOCALAPPDATA%/GlassWidgets/layout.json at runtime.
+LocalSettings.json
+*.local.json
+app.log
+*.log
+
+# === Packaging / publish output (NOT source) ===
+# dotnet publish 输出目录
+publish/
+# Inno Setup 编译产物（自包含安装包，体积大，建议走 GitHub Releases 分发而非入库）
+dist/*.exe
+# 安装脚本源码 GlassWidgets.iss 保留入库（不忽略）

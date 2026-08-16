@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <AssemblyName>GlassWidgets</AssemblyName>
+    <RootNamespace>GlassWidgets</RootNamespace>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <NoWarn>CA1416</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1" />
+    <!-- 性能计数器需单独引包（net8 非框架内建） -->
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="8.0.1" />
+    <!-- 发布前 SCA 修复：Avalonia.Desktop 间接引入的 Tmds.DBus.Protocol 0.20.0 存在 High 漏洞
+         (GHSA-xrw6-gwf8-vvr9 / CVE-2026-39959，仅 Linux 运行期生效)。本程序为 Windows-only WinExe，
+         运行时不加载该包，风险≈0；此处锁定到同线兼容的修复版 0.21.3 以清除依赖告警。 -->
+    <PackageReference Include="Tmds.DBus.Protocol" Version="0.21.3" />
+  </ItemGroup>
+</Project>

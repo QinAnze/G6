@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GlassWidgets.Controls"
+        x:Class="GlassWidgets.Center.WidgetCenterWindow"
+        TransparencyLevelHint="AcrylicBlur"
+        SystemDecorations="None"
+        Background="Transparent" Foreground="#FFFFFFFF"
+        ShowInTaskbar="True" Topmost="True"
+        WindowStartupLocation="CenterScreen" CanResize="False"
+        Width="360" Height="476">
+  <Grid x:Name="Root" Background="Transparent">
+    <local:GlassSurface x:Name="Board" CornerRadius="16" TintOpacity="0.32" TintColor="#56565F" GlossStrength="1.2" />
+    <Grid RowDefinitions="Auto,*,Auto" Margin="22,18,22,18">
+      <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto">
+        <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+          <!-- macOS 顺序：红灯（关闭）最左，黄灯（最小化）其次 -->
+          <Button x:Name="CloseBtn" Classes="mac close" ToolTip.Tip="关闭">
+            <Path Data="{StaticResource GeoGlyphClose}" />
+          </Button>
+          <Button x:Name="MinBtn" Classes="mac min" ToolTip.Tip="最小化">
+            <Path Data="{StaticResource GeoGlyphMin}" />
+          </Button>
+        </StackPanel>
+        <TextBlock Grid.Column="1" Classes="title" Text="小组件中心" HorizontalAlignment="Center" VerticalAlignment="Center" />
+      </Grid>
+
+      <ScrollViewer Grid.Row="1" Margin="0,16,0,0"
+                    HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <WrapPanel x:Name="CardHost" HorizontalAlignment="Center" />
+      </ScrollViewer>
+
+      <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="0,16,0,0">
+        <TextBlock Grid.Column="0" Classes="sub" Text="点击卡片添加到桌面" VerticalAlignment="Center" />
+        <Button Grid.Column="1" x:Name="ClearBtn" Classes="icon" ToolTip.Tip="清空全部">
+          <Path Classes="glyph" Data="{StaticResource GeoClear}" />
+        </Button>
+      </Grid>
+    </Grid>
+  </Grid>
+</Window>

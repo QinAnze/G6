@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- 组件图标：现代极简线性 SVG（圆角端点、单色，引用处设 Stroke），规范 §9 -->
+  <StreamGeometry x:Key="GeoCpu">M8 8 H16 V16 H8 Z M5 10 H3 M5 14 H3 M21 10 H19 M21 14 H19 M10 5 V3 M14 5 V3 M10 21 V19 M14 21 V19</StreamGeometry>
+  <StreamGeometry x:Key="GeoMemory">M5 8 H19 V16 H5 Z M9 8 V16 M13 8 V16 M17 8 V16</StreamGeometry>
+  <StreamGeometry x:Key="GeoDisk">M5 4 H19 V20 H5 Z M5 4 H14 V9 H5 Z M8 13 H16 M8 16 H13</StreamGeometry>
+  <StreamGeometry x:Key="GeoNetwork">M3 13 H7 L9 7 L13 17 L15 11 H21</StreamGeometry>
+  <StreamGeometry x:Key="GeoBattery">M3 9 H18 V15 H3 Z M18 11 H21 V13 H18</StreamGeometry>
+  <StreamGeometry x:Key="GeoClock">M12 4 A8 8 0 1 0 12 20 A8 8 0 1 0 12 4 M12 8 V12 L15 14</StreamGeometry>
+
+  <!-- 界面图标 -->
+  <StreamGeometry x:Key="GeoClose">M7 7 L17 17 M17 7 L7 17</StreamGeometry>
+  <StreamGeometry x:Key="GeoMin">M7 12 H17</StreamGeometry>
+  <StreamGeometry x:Key="GeoClear">M6 7 H18 M9 7 V5 H15 V7 M8 7 L9 19 H15 L16 7</StreamGeometry>
+
+  <!-- mac 灯 glyph（默认透明，:pointerover 时显形）。M0 0 M10 10 强制 10×10 对称包围盒（符号 2..8，中心 5），避免水平线高度为 0 导致 Uniform 缩放失败。 -->
+  <StreamGeometry x:Key="GeoGlyphClose">M0 0 M10 10 M2 2 L8 8 M8 2 L2 8</StreamGeometry>
+  <StreamGeometry x:Key="GeoGlyphMin">M0 0 M10 10 M2 5 H8</StreamGeometry>
+</ResourceDictionary>
