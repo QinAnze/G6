@@ -7,7 +7,7 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <AssemblyName>GlassWidgets</AssemblyName>
     <RootNamespace>GlassWidgets</RootNamespace>
-    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\LogoIcon.ico</ApplicationIcon>
     <NoWarn>CA1416</NoWarn>
   </PropertyGroup>
 

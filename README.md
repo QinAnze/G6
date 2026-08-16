@@ -112,7 +112,7 @@ GlassWidgets/
 │   ├── LiquidGlassTheme.axaml  # 主题（mac 交通灯、大号文本等样式）
 │   └── Geometries.axaml        # SVG StreamGeometry 图标资源
 ├── Assets/
-│   ├── AppIcon.ico             # exe 文件图标（玻璃蓝渐变 + 网格，含 16~256 多档）
+│   ├── LogoIcon.ico            # exe/安装包文件图标（由 logo.png 同源导出，含 16~256 多档）
 │   └── logo.png                # 高清源图标（1024²，README / 运行时托盘同源）
 └── GlassWidgets.iss            # Inno Setup 安装脚本（编译产物 → dist/GlassWidgets-setup.exe）
 ```
